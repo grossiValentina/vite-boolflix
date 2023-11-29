@@ -10,10 +10,20 @@ export default {
       store
     };
   },
+  created(){
+    axios.get(this.store.apiUrl, {
+      params: {
+        query: "Ciao",
+        api_key: "f639ba1a0b735006007235add8706369",
+
+      }}).then((resp) => {
+        console.log(resp)
+    })
+  },
   components :{
     AppHeader,
     AppList,
-}
+ }
 }
 
 </script>
