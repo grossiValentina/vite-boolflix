@@ -1,6 +1,11 @@
 <script>
+import {store} from "../store";
 export default {
-   
+   data(){
+    return{
+        store
+    }
+   }
 
 }
 </script>
@@ -10,9 +15,9 @@ export default {
     <div class="container">
 
         <div class="d-flex">
-            <input type="search" class="form-control" placeholder="cosa vuoi vedere" />
+            <input type="search" class="form-control" placeholder="cosa vuoi vedere" v-model.trim="store.searchFilm"/>
         </div>
-        
+
     </div>
 
 </template>

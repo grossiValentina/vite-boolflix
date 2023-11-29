@@ -33,6 +33,7 @@ export default {
 
     },
   components :{
+    
     AppHeader,
     AppSearch,
     AppButton,
