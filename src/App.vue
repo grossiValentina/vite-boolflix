@@ -20,8 +20,8 @@ export default {
         api_key: "f639ba1a0b735006007235add8706369",
 
       }}).then((resp) => {
-        this.store.list = 
-        console.log(this.store.list)
+        this.store.list = resp.data.results[0].poster_path;
+        console.log(resp.data.results[0].poster_path)
     })
   },
 
@@ -33,7 +33,6 @@ export default {
 
     },
   components :{
-    
     AppHeader,
     AppSearch,
     AppButton,
