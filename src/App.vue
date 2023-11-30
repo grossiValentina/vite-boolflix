@@ -18,10 +18,10 @@ export default {
 
   methods: {
     handleSearch(){
-      axios.get(this.store.apiUrl, {
+      axios.get(`${this.store.apiUrl}/search/movie`, {
       params: {
         query: this.store.searchContent,
-        api_key: "f639ba1a0b735006007235add8706369",
+        api_key: this.store.myApiKey,
 
       }}).then((resp) => {
         this.store.moviesList = resp.data.results;
