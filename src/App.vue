@@ -18,6 +18,7 @@ export default {
 
   methods: {
     handleSearch(){
+      // chiamata per ricerca film
       axios.get(`${this.store.apiUrl}/search/movie`, {
       params: {
         query: this.store.searchContent,
@@ -26,8 +27,19 @@ export default {
       }}).then((resp) => {
         this.store.moviesList = resp.data.results;
         console.log(resp.data.results)
-    })
-  
+    });
+
+    // chiamata per ricerca serie tv
+    axios.get(`${this.store.apiUrl}/search/tv`, {
+      params: {
+        query: this.store.searchContent,
+        api_key: this.store.myApiKey,
+
+      }}).then((resp) => {
+        this.store.seriesList = resp.data.results;
+        console.log(resp.data.results)
+    });
+
     }
 
 

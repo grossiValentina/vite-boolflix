@@ -26,9 +26,9 @@ export default {
 
     <div class="card" style="width: 10rem;">
         <div class="card-body">
-            <h4 class="card-title">{{ movieObject.title }}</h4>
+            <h4 class="card-title">{{ movieObject.title ? movieObject.title : movieObject.name }}</h4>
 
-            <h5 class="card-title">{{ movieObject.original_title }}</h5>
+            <h5 class="card-title">{{ movieObject.original_title ? movieObject.original_title : movieObject.original_name }}</h5>
 
             <img class="w-25" v-if="flag.includes(movieObject.original_language)" :src="getImage(movieObject.original_language)" alt="">
 
