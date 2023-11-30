@@ -1,8 +1,13 @@
 <script>
 
 export default {
-  
+    
+    emits: ["btnClick"]
+   
 }
+
+
+
 </script>
 
 <template>

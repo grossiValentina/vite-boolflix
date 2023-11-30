@@ -1,6 +1,6 @@
 <script>
 import axios from "axios";
-import AppHeader from "./components/AppHeader.vue"
+import AppHeader from "./components/AppHeader.vue";
 import AppSearch from "./components/AppSearch.vue";
 import AppButton from "./components/AppButton.vue";
 import AppList from "./components/AppList.vue";
@@ -13,23 +13,23 @@ export default {
       store
     };
   },
-  created(){
-    axios.get(this.store.apiUrl, {
-      params: {
-        query: "Ciao",
-        api_key: "f639ba1a0b735006007235add8706369",
-
-      }}).then((resp) => {
-        this.store.list = resp.data.results[0].poster_path;
-        console.log(resp.data.results[0].poster_path)
-    })
-  },
+    
+  
 
   methods: {
     handleSearch(){
-        console.log(cercaa)
+      axios.get(this.store.apiUrl, {
+      params: {
+        query: this.store.searchContent,
+        api_key: "f639ba1a0b735006007235add8706369",
+
+      }}).then((resp) => {
+        this.store.moviesList = resp.data.results;
+        console.log(resp.data.results)
+    })
+  
     }
-     
+
 
     },
   components :{
@@ -45,7 +45,7 @@ export default {
 <template>
   <AppHeader />
   <AppSearch />
-  <AppButton @btnClick="handleSearch"/>
+  <AppButton @btnClick="handleSearch()"/>
   <AppList />
  
 </template>
