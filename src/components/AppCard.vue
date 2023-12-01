@@ -24,11 +24,11 @@ export default {
 </script>
 
 <template>
-    <div class="my-card card" style="width: 15rem;">
+    <div class="my-card card" style="width: 7.5rem;">
 
         <img class="my-image" v-if="movieObject.poster_path" :src="`${imageCover}${movieObject.poster_path}`" alt="">
 
-        <img v-else
+        <img class="img-defoult" v-else
             src="https://c8.alamy.com/compit/2f8975j/nessun-simbolo-vettoriale-contorno-immagine-icona-mancante-nessuna-galleria-per-questo-momento-2f8975j.jpg"
             alt="">
 
@@ -54,8 +54,8 @@ export default {
 
 <style scoped lang="scss">
 .my-card{
-    width: 15rem;
-    height: 22rem;
+    width: 7rem;
+    height: 100%;
     position: relative;
     background-color: black;
 
