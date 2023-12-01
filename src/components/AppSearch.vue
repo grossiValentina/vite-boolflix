@@ -15,8 +15,9 @@ export default {
     <div class="wrapper">
         <div class="container">
 
-            <h1 class="text-center fw-bold p-1">BOOLFLIX</h1>
-            <div class="d-flex">
+            <h1 class="text-center fw-bold pt-2 m-0">BOOLFLIX</h1>
+
+            <div class="d-flex p-3">
                 <input type="search" class="form-control" placeholder="cosa vuoi vedere"
                     v-model.trim="store.searchContent" />
 

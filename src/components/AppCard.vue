@@ -35,7 +35,7 @@ export default {
             src="https://c8.alamy.com/compit/2f8975j/nessun-simbolo-vettoriale-contorno-immagine-icona-mancante-nessuna-galleria-per-questo-momento-2f8975j.jpg"
             alt="">
 
-         <div class="my-content  text-center mt-4">
+         <div class="my-content  text-center m-0 p-1">
 
             <h4 class="overlay-text">{{ movieObject.title ? movieObject.title : movieObject.name }}</h4>
 
@@ -45,11 +45,11 @@ export default {
             <img class="w-25" v-if="flag.includes(movieObject.original_language)"
                 :src="getImage(movieObject.original_language)" alt="">
 
-            <p v-else class="card-text">{{ movieObject.original_language }}</p>
+            <p v-else class="card-text m-1">{{ movieObject.original_language }}</p>
 
-            <p class="card-text">{{ movieObject.vote_everage }}</p>
+            <p class="card-text m-0">{{ movieObject.vote_everage }}</p>
 
-            <p>{{ Math.ceil(movieObject.vote_average / 2) }}</p>
+            <p class="stars m-2" >{{ Math.ceil(movieObject.vote_average / 2) }}</p>
 
             <div>
                 <i v-for="num in 5" class="fa-star" :class="num <= vote ? `fa-solid` : `fa-regular`"></i>
@@ -98,21 +98,20 @@ export default {
 }
 
 .overlay-text {
-  font-size: 20px;
-  margin-top: 20px;
+  font-size: .7rem;
+  margin-top: .2rem;
 }
 
 .card-title {
-  font-size: 16px;
-  margin-bottom: 10px;
+  font-size: .5rem;
+  margin-bottom: .2rem;
 }
 
 .card-text {
-  font-size: 14px;
+  font-size: .5rem;
 }
-
-
-    
-
+.stars{
+    font-size: .7rem;
+}
 
 </style>
