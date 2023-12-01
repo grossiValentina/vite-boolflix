@@ -19,15 +19,15 @@ export default {
             return new URL(`../assets/img/${language}.png`, import.meta.url).href
         },
 
-        vote(){
-            return Math.ceil(this.movieObject.vote_average / 2)
+        vote(movie){
+            return Math.ceil(movie.vote_average / 2)
         }
     }
 };
 </script>
 
 <template>
-    <div class="my-card card" style="width: 7.5rem;">
+    <div class="my-card card" style="width: 9rem;">
 
         <img class="my-image" v-if="movieObject.poster_path" :src="`${imageCover}${movieObject.poster_path}`" alt="">
 
@@ -35,7 +35,7 @@ export default {
             src="https://c8.alamy.com/compit/2f8975j/nessun-simbolo-vettoriale-contorno-immagine-icona-mancante-nessuna-galleria-per-questo-momento-2f8975j.jpg"
             alt="">
 
-         <div class="my-content  text-center m-0 p-1">
+         <div class="my-content  text-center m-0 p-1 pt-4">
 
             <h4 class="overlay-text">{{ movieObject.title ? movieObject.title : movieObject.name }}</h4>
 
@@ -51,7 +51,7 @@ export default {
 
             <div class="stars">
                 
-                <i v-for="num in 5" class="fa-star" :class="num <= vote ? `fa-solid` : `fa-regular`"></i> 
+                <i v-for="num in 5" class="fa-star" :class="num <= vote(movieObject) ? `fa-solid` : `fa-regular`"></i> 
             </div>
 
         </div>

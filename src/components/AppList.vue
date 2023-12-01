@@ -44,8 +44,11 @@ export default {
     width: 95%;
     margin: auto;
 }
-
 .wrapper {
-    width: 100%
+    width: 100%;
 };
+h2{
+    color: red;
+}
+
 </style>
