@@ -47,7 +47,5 @@ export default {
 
 .wrapper {
     width: 100%
-}
-
-;
+};
 </style>

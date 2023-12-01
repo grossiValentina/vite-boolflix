@@ -19,6 +19,9 @@ export default {
             return new URL(`../assets/img/${language}.png`, import.meta.url).href
         },
 
+        vote(){
+            return Math.ceil(this.movieObject.vote_average / 2)
+        }
     }
 };
 </script>
@@ -46,6 +49,12 @@ export default {
 
             <p class="card-text">{{ movieObject.vote_everage }}</p>
 
+            <p>{{ Math.ceil(movieObject.vote_average / 2) }}</p>
+
+            <div>
+                <i v-for="num in 5" class="fa-star" :class="num <= vote ? `fa-solid` : `fa-regular`"></i>
+            </div>
+
         </div>
 
     </div>
@@ -63,7 +72,7 @@ export default {
          display: none;
     }
         
-    &:hover.my-content{
+    &:hover .my-content{
          display: block;
         
     }

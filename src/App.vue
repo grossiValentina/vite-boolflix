@@ -1,8 +1,6 @@
 <script>
 import axios from "axios";
-import AppHeader from "./components/AppHeader.vue";
 import AppSearch from "./components/AppSearch.vue";
-import AppButton from "./components/AppButton.vue";
 import AppList from "./components/AppList.vue";
 import { store } from "./store.js";
 
@@ -40,15 +38,12 @@ export default {
         console.log(resp.data.results)
     });
 
-
     }
-
 
     },
   components :{
-    AppHeader,
+  
     AppSearch,
-    AppButton,
     AppList,
 }
 }
@@ -56,9 +51,8 @@ export default {
 </script>
 
 <template>
-  <AppHeader />
-  <AppSearch />
-  <AppButton @btnClick="handleSearch()"/>
+
+  <AppSearch @btnClick="handleSearch()"/>
   <AppList />
  
 </template>
