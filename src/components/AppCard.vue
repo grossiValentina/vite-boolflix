@@ -47,12 +47,11 @@ export default {
 
             <p v-else class="card-text m-1">{{ movieObject.original_language }}</p>
 
-            <p class="card-text m-0">{{ movieObject.vote_everage }}</p>
+            <p class="num-stars m-2" >{{ Math.ceil(movieObject.vote_average / 2) }}</p>
 
-            <p class="stars m-2" >{{ Math.ceil(movieObject.vote_average / 2) }}</p>
-
-            <div>
-                <i v-for="num in 5" class="fa-star" :class="num <= vote ? `fa-solid` : `fa-regular`"></i>
+            <div class="stars">
+                
+                <i v-for="num in 5" class="fa-star" :class="num <= vote ? `fa-solid` : `fa-regular`"></i> 
             </div>
 
         </div>
@@ -76,14 +75,22 @@ export default {
          display: block;
         
     }
+
+    &:hover .img-defoult{
+        display: none;
+    }
     
 }
 .my-image {
   display: block;
   width: 100%;
   height: 100%;
-  display: block;
   border-radius: 0.375rem;
+}
+
+.img-defoult{
+    display: block;
+    height: 100%;
 }
 
 .my-content {
@@ -110,8 +117,11 @@ export default {
 .card-text {
   font-size: .5rem;
 }
-.stars{
+.num-stars{
     font-size: .7rem;
 }
 
+.stars{
+
+}
 </style>
